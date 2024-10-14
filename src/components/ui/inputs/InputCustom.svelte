@@ -12,12 +12,11 @@
   function handleInput(event) {
     const val = event.target.value;
     error = '';
-
-    // Применяем кастомную валидацию, если она задана
     if (customValidation) {
       error = customValidation(val);
     }
 
+    // @ts-ignore
     onChange(val, error);
   }
 </script>
@@ -33,9 +32,6 @@
   />
 </label>
 
-{#if error}
-  <p style="color: red;">{error}</p>
-{/if}
 
 <style>
   label{
@@ -60,7 +56,7 @@
     padding-bottom: 6px;
     border: none;
     border-bottom: 1px solid #3F4363;
-    transition: border-color 0.3s ease; /* Плавный переход для цвета границы */
+    transition: border-color 0.3s ease; 
   }
   input:focus{
     outline: none;

@@ -1,6 +1,6 @@
 <!-- Chekbox.svelte -->
 <script>
-  import icon from "../../assets/img/Checkmark.svg"
+  import icon from "../../../assets/img/Checkmark.svg"
   export let checked = false;
   export let onChange;
   
@@ -11,6 +11,7 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="chekbox" on:click={handleClick} role="button" tabindex="0">
   {#if checked} <img src="{icon}" alt="Checkmark icon"> {/if}
 </div>

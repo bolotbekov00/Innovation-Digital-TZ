@@ -1,21 +1,32 @@
 export const validateGmail = (email) => {
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+  if (email.trim() === "") {
+    return "Это поле обязательно к заполнению";
+  }
+
   if (!gmailRegex.test(email)) {
-    return "Please enter a valid Gmail address";
+    return "Пожалуйста, введите действительный адрес Gmail";
   }
   return "";
 };
+
 export function validateRequired(value) {
-  if (!value) {
-    return "This field is required";
+  if (!value.trim()) {
+    return "Это поле обязательно к заполнению";
   }
   return "";
 }
 
 export function validatePhone(phone) {
   const phoneRegex = /^\+996\d{9}$/;
+
+  if (phone.trim() === "") {
+    return "";
+  }
+
   if (!phoneRegex.test(phone)) {
-    return "Please enter a valid phone number with country code +996 followed by exactly 9 digits";
+    return "Введите действительный номер телефона с кодом страны +996";
   }
   return "";
 }

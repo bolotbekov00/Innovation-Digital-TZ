@@ -1,12 +1,12 @@
 <script>
-  import InputCustom from '../inputs/InputCustom.svelte';
+  import InputCustom from '../ui/inputs/InputCustom.svelte';
   import { validateGmail, validateRequired, validatePhone } from '../helpers/helpers';
-  import Chekbox from '../chekbox/Chekbox.svelte';
-  import Modal from '../modalWindow/modalWindow.svelte'; // Импортируйте компонент модального окна
+  import Chekbox from '../ui/chekbox/Chekbox.svelte';
+  import Modal from '../ui/modalWindow/modalWindow.svelte'; 
 
   let nameValue = '';
   let emailValue = '';
-  let phoneValue = '';
+  let phoneValue = '+996';
   let subjectValue = '';
   let messageValue = '';
   let nameError = '';
@@ -16,7 +16,7 @@
   let messageError = '';
   let checkboxChecked = false;
   let checkboxError = '';
-  let isModalOpen = false; // Состояние модального окна
+  let isModalOpen = false;
 
   function handleNameChange(value, error) {
     nameValue = value;
@@ -96,7 +96,6 @@
         messageValue,
         checkboxChecked,
       });
-
       nameValue = '';
       emailValue = '';
       phoneValue = '';
@@ -109,7 +108,6 @@
       messageError = '';
       checkboxChecked = false;
       checkboxError = '';
-
       isModalOpen = true;
     }
   }
